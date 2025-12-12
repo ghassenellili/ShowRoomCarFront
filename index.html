@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercedes-Benz Showcase</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="https://www.mercedes-benz.com/content/dam/brandhub/global/logos/MB-star_n_web.svg" alt="Mercedes-Benz Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#models">Models</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" role="button" aria-label="Toggle menu" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Experience Excellence</h1>
+            <p>Discover the world of Mercedes-Benz luxury and innovation</p>
+            <a href="#models" class="cta-button">Explore Our Collection</a>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <section id="models" class="car-showcase">
+        <h2 class="section-title">Our Prestigious Models</h2>
+        <div class="car-grid">
+            <div class="car-card fade-in">
+                <img src="s.jpg" alt="Mercedes S-Class" class="car-card-image">
+                <div class="car-card-content">
+                    <h3>S-Class</h3>
+                    <p>The pinnacle of luxury and technological innovation</p>
+                    <button class="learn-more">Learn More</button>
+                    <a href="sclass.html"></a>
+                </div>
+            </div>
+
+            <div class="car-card fade-in">
+                <img src="ee.jpg" alt="Mercedes E-Class" class="car-card-image">
+                <div class="car-card-content">
+                    <h3>E-Class</h3>
+                    <p>Sophisticated elegance meets dynamic performance</p>
+                    <button class="learn-more">Learn More</button>
+                </div>
+            </div>
+
+            <div class="car-card fade-in">
+                <img src="ccc.jpg" alt="Mercedes C-Class" class="car-card-image">
+                <div class="car-card-content">
+                    <h3>C-Class</h3>
+                    <p>Sporty design with exceptional driving dynamics</p>
+                    <button class="learn-more">Learn More</button>
+                </div>
+            </div>
+
+            <div class="car-card fade-in">
+                <img src="gle.jpg" alt="Mercedes GLE" class="car-card-image">
+                <div class="car-card-content">
+                    <h3>GLE 400e</h3>
+                    <p>Powerful SUV with hybrid efficiency</p>
+                    <button class="learn-more">Learn More</button>
+                </div>
+            </div>
+
+            <div class="car-card fade-in">
+                <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=600&h=400&fit=crop" alt="Mercedes AMG GT" class="car-card-image">
+                <div class="car-card-content">
+                    <h3>AMG GT</h3>
+                    <p>Pure performance and racing heritage</p>
+                    <button class="learn-more">Learn More</button>
+                </div>
+            </div>
+
+            <div class="car-card fade-in">
+                <img src="eqs.jpg" alt="Mercedes EQS" class="car-card-image">
+                <div class="car-card-content">
+                    <h3>EQS Electric</h3>
+                    <p>The future of luxury electric mobility</p>
+                    <button class="learn-more">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <h2 class="section-title">Why Choose Mercedes-Benz</h2>
+        <div class="feature-grid">
+            <div class="feature-card fade-in">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Safety First</h3>
+                <p>Industry-leading safety systems and advanced driver assistance technologies for complete peace of mind</p>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <h3>Innovation</h3>
+                <p>Cutting-edge engineering and groundbreaking technology that sets the benchmark for the automotive industry</p>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <h3>Luxury</h3>
+                <p>Unparalleled comfort, exquisite craftsmanship, and attention to detail in every aspect</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-container fade-in">
+            <form id="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name" class="sr-only">Name</label>
+                        <input type="text" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="sr-only">Email</label>
+                        <input type="email" id="email" placeholder="Your Email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message" class="sr-only">Message</label>
+                    <textarea id="message" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+                <div id="form-success" class="form-success" hidden></div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Mercedes-Benz</h3>
+                <p>The best or nothing. Experience automotive excellence and innovation since 1926.</p>
+            </div>
+            <div>
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Mercedes-Benz. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="scriptjs.js"></script>
+</body>
+</html>

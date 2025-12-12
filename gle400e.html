@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercedes-Benz S-Class | The Pinnacle of Luxury</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #00A3E0;
+            --primary-dark: #0082B3;
+            --dark: #1a1a1a;
+            --light: #ffffff;
+            --gray: #f8f9fa;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --gold: #d4af37;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px var(--shadow);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo img {
+            height: 45px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover img {
+            transform: rotate(360deg);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero-details {
+            margin-top: 80px;
+            height: 70vh;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 163, 224, 0.3)),
+                        url('https://i.pinimg.com/1200x/ca/0c/c4/ca0cc4b8823aff338cedf2752f39b1d1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-details::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.4) 100%);
+        }
+
+        .hero-content {
+            text-align: center;
+            color: var(--light);
+            z-index: 1;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 20px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            opacity: 0.95;
+            text-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+        }
+
+        /* Model Details */
+        .model-details {
+            padding: 0;
+        }
+
+        /* Quick Stats Section */
+        .quick-stats {
+            background: linear-gradient(135deg, var(--dark), #2d2d2d);
+            color: var(--light);
+            padding: 4rem 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .stat-item:nth-child(1) { animation-delay: 0.1s; }
+        .stat-item:nth-child(2) { animation-delay: 0.2s; }
+        .stat-item:nth-child(3) { animation-delay: 0.3s; }
+        .stat-item:nth-child(4) { animation-delay: 0.4s; }
+
+        .stat-icon {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            padding: 6rem 5%;
+            background: var(--gray);
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .gallery-header h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .gallery-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--gold));
+            border-radius: 2px;
+        }
+
+        .gallery-header p {
+            color: #666;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-top: 1.5rem;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px var(--shadow);
+            transition: all 0.4s ease;
+            aspect-ratio: 4/3;
+        }
+
+        .gallery-item.large {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 163, 224, 0.6), rgba(212, 175, 55, 0.6));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            /* allow clicks to pass through the pseudo element */
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .gallery-item::after {
+            content: '\f00e';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            color: var(--light);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            /* allow clicks to reach the img below */
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 163, 224, 0.3);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item:hover::before,
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            animation: zoomIn 0.3s ease;
+        }
+
+        .lightbox-image {
+            max-width: 100%;
+            max-height: 90vh;
+            border-radius: 10px;
+            box-shadow: 0 0 50px rgba(0, 163, 224, 0.5);
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            font-size: 3rem;
+            color: var(--light);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .close-lightbox:hover {
+            transform: rotate(90deg);
+            background: var(--primary);
+        }
+
+        .prev-btn, .next-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 3rem;
+            color: var(--light);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            backdrop-filter: blur(10px);
+        }
+
+        .prev-btn:hover, .next-btn:hover {
+            background: var(--primary);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .prev-btn {
+            left: 20px;
+        }
+
+        .next-btn {
+            right: 20px;
+        }
+
+        /* Specifications Section */
+        .specifications {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+        }
+
+        .specifications h2 {
+            text-align: center;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .specifications h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--gold));
+            border-radius: 2px;
+        }
+
+        .specs-table {
+            max-width: 1000px;
+            margin: 3rem auto;
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: var(--light);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px var(--shadow);
+        }
+
+        .specs-table th {
+            background: linear-gradient(135deg, var(--dark), #2d2d2d);
+            color: var(--light);
+            padding: 2rem;
+            font-size: 1.5rem;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .specs-table tr {
+            transition: all 0.3s ease;
+        }
+
+        .specs-table tr:hover {
+            background: rgba(0, 163, 224, 0.05);
+            transform: scale(1.01);
+        }
+
+        .specs-table td {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+
+        .specs-table td:first-child {
+            font-weight: 600;
+            color: var(--dark);
+            width: 40%;
+            position: relative;
+        }
+
+        .specs-table td:first-child::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 0;
+            background: var(--primary);
+            transition: height 0.3s ease;
+        }
+
+        .specs-table tr:hover td:first-child::before {
+            height: 70%;
+        }
+
+        .specs-table td:last-child {
+            color: #666;
+        }
+
+        .specs-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            color: var(--light);
+            padding: 4rem 5% 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto 3rem;
+        }
+
+        .footer-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-info p {
+            opacity: 0.8;
+            line-height: 1.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-5px) rotate(360deg);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .gallery-item.large {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+
+            .quick-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            .specs-table td {
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .specs-table td:first-child {
+                width: 50%;
+            }
+
+            .prev-btn, .next-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 2rem;
+            }
+
+            .prev-btn {
+                left: 10px;
+            }
+
+            .next-btn {
+                right: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .quick-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="https://www.mercedes-benz.com/content/dam/brandhub/global/logos/MB-star_n_web.svg" alt="Mercedes-Benz Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#models">Models</a></li>
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="hero-details">
+        <div class="hero-content">
+            <h1>GLE 400e</h1>
+            <p>Powerful SUV with hybrid efficiency</p>
+        </div>
+    </div>
+
+    <div class="model-details">
+        <!-- Quick Stats -->
+        <section class="quick-stats">
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <i class="fas fa-tachometer-alt"></i>
+                </div>
+                <div class="stat-value">400</div>
+                <div class="stat-label">Horsepower</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <div class="stat-value">5.1s</div>
+                <div class="stat-label">0-100 kM/h</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <i class="fas fa-cog"></i>
+                </div>
+                <div class="stat-value">9-Speed</div>
+                <div class="stat-label">Automatic</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <i class="fas fa-gas-pump"></i>
+                </div>
+                <div class="stat-value">24</div>
+                <div class="stat-label">MPG Combined</div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="gallery-section">
+            <div class="gallery-header">
+                <h2>Gallery</h2>
+                <p>Experience Excellence in Every Detail</p>
+            </div>
+            <div class="gallery-container">
+                <div class="gallery-item large">
+                    <img src="inter2.jpg" alt="S-Class Interior" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="ex1s.jpg" alt="S-Class Side Profile" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="ex2s.webp" alt="S-Class Dashboard" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="entr222.jpg" alt="S-Class Front View" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="intr11.jpg" alt="S-Class Rear View" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="s.jpg" alt="S-Class Night View" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="sclass.webp" alt="S-Class Technology" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Specifications -->
+        <section class="specifications">
+            <h2>Technical Specifications</h2>
+            <table class="specs-table">
+                <tr>
+                    <th colspan="2">Mercedes-Benz S-Class Specifications</th>
+                </tr>
+                <tr>
+                    <td>Engine</td>
+                    <td>2.5L Inline-6 Turbo with EQ Boost</td>
+                </tr>
+                <tr>
+                    <td>Power Output</td>
+                    <td>429 hp @ 6,100 rpm</td>
+                </tr>
+                <tr>
+                    <td>Torque</td>
+                    <td>384 lb-ft @ 1,800-5,800 rpm</td>
+                </tr>
+                <tr>
+                    <td>Acceleration (0-60 mph)</td>
+                    <td>4.9 seconds</td>
+                </tr>
+                <tr>
+                    <td>Transmission</td>
+                    <td>9G-TRONIC 9-Speed Automatic</td>
+                </tr>
+                <tr>
+                    <td>Drive Type</td>
+                    <td>4MATIC All-Wheel Drive</td>
+                </tr>
+                <tr>
+                    <td>Fuel Economy (City/Highway)</td>
+                    <td>21 / 28 mpg</td>
+                </tr>
+                <tr>
+                    <td>Fuel Economy (Combined)</td>
+                    <td>24 mpg</td>
+                </tr>
+                <tr>
+                    <td>Wheelbase</td>
+                    <td>126.6 inches</td>
+                </tr>
+                <tr>
+                    <td>Length</td>
+                    <td>206.5 inches</td>
+                </tr>
+                <tr>
+                    <td>Width</td>
+                    <td>75.8 inches</td>
+                </tr>
+                <tr>
+                    <td>Height</td>
+                    <td>58.9 inches</td>
+                </tr>
+                <tr>
+                    <td>Seating Capacity</td>
+                    <td>5 passengers</td>
+                </tr>
+                <tr>
+                    <td>Cargo Volume</td>
+                    <td>12.8 cubic feet</td>
+                </tr>
+                <tr>
+                    <td>Top Speed</td>
+                    <td>320 KM/h (electronically limited)</td>
+                </tr>
+            </table>
+        </section>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <span class="close-lightbox">&times;</span>
+            <img src="" alt="Lightbox Image" class="lightbox-image">
+            <span class="prev-btn"><i class="fas fa-chevron-left"></i></span>
+            <span class="next-btn"><i class="fas fa-chevron-right"></i></span>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Mercedes-Benz</h3>
+                <p>The best or nothing. Experience automotive excellence and innovation since 1926.</p>
+            </div>
+            <div>
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Mercedes-Benz. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Gallery and Lightbox functionality (attach to .gallery-item containers)
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.querySelector('.lightbox-image');
+        const closeBtn = document.querySelector('.close-lightbox');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        let currentImageIndex = 0;
+
+        // Build an array of image URLs from the gallery
+        const gallerySources = Array.from(galleryItems).map(item => {
+            const img = item.querySelector('img');
+            return img ? img.src : '';
+        }).filter(Boolean);
+
+        // Add click event to each gallery item
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('click', (e) => {
+                // prevent clicks on pseudo-elements interfering (safety)
+                e.stopPropagation();
+                currentImageIndex = index;
+                showLightbox(gallerySources[currentImageIndex]);
+            });
+        });
+
+        // Show lightbox
+        function showLightbox(src) {
+            if (!src) return;
+            lightbox.style.display = 'flex';
+            lightboxImg.src = src;
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close lightbox
+        function closeLightbox() {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+
+        // Close when clicking outside the content
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        // Previous image
+        if (prevBtn) prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentImageIndex = (currentImageIndex - 1 + gallerySources.length) % gallerySources.length;
+            lightboxImg.src = gallerySources[currentImageIndex];
+        });
+
+        // Next image
+        if (nextBtn) nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentImageIndex = (currentImageIndex + 1) % gallerySources.length;
+            lightboxImg.src = gallerySources[currentImageIndex];
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            const isOpen = window.getComputedStyle(lightbox).display === 'flex';
+            if (!isOpen) return;
+            if (e.key === 'Escape') {
+                closeLightbox();
+            } else if (e.key === 'ArrowLeft') {
+                currentImageIndex = (currentImageIndex - 1 + gallerySources.length) % gallerySources.length;
+                lightboxImg.src = gallerySources[currentImageIndex];
+            } else if (e.key === 'ArrowRight') {
+                currentImageIndex = (currentImageIndex + 1) % gallerySources.length;
+                lightboxImg.src = gallerySources[currentImageIndex];
+            }
+        });
+
+        // Parallax effect for hero (unchanged)
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero-details');
+            if (hero && scrolled < hero.offsetHeight) {
+                hero.style.backgroundPositionY = scrolled * 0.5 + 'px';
+            }
+        });
+    </script>
+</body>
+</html>
